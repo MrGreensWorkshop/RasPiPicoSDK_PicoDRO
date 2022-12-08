@@ -1,0 +1,31 @@
+name: Ask a Question
+description: Something is not going according to plan?
+title: "<title>"
+labels: "delete me"
+body:
+- type: checkboxes
+  attributes:
+    label: Please check these items before go any further
+    description: Please search to see if an issue or discussion already exists for the problem you encountered.
+    options:
+    - label: I have watched [the related video](https://youtu.be/lGm3rTDp7nE) on YouTube.
+      required: true
+    - label: I have searched the existing [Issues](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/issues/).
+      required: true
+    - label: I have searched the existing [Discussions](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/discussions/).
+      required: true
+    - label: I have checked the existing Issues in the [QuadratureDecoder repo](https://github.com/adamgreen/QuadratureDecoder/issues/) and the answer was not there.
+      required: true
+- type: markdown
+  attributes:
+    value: |
+      Checked all above but still couldn't find an answer?
+      #### [Click here to ask a question in Discussions](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/discussions/new?category=problems)
+- type: dropdown
+  id: t
+  attributes:
+    label: "."
+    options:
+      - .
+  validations:
+    required: true

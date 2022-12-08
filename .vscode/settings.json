@@ -1,0 +1,8 @@
+{
+    "cortex-debug.openocdPath": "${env:HOME}/openocd/src/openocd",
+    "terminal.integrated.env.osx": {
+        "PICO_SDK_PATH": "${env:HOME}/pico-sdk"
+    },
+    // "terminal.integrated.env.linux": {},
+    // "terminal.integrated.env.windows": {}
+}
