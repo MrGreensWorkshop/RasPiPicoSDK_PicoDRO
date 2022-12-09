@@ -101,4 +101,4 @@ This project incorporates libraries written below. Without these libraries, I co
 
 | Library                              | file(s) |
 | :----------------------------------- | ------- |
-| [ QuadratureDecoder](https://github.com/adamgreen/QuadratureDecoder), Copyright 2021 Adam Green (https://github.com/adamgreen/). QuadratureDecoder is distributed under the terms of the Apache License Version 2.0. | [Qdec](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/tree/<sha>/src/qdec) |
+| [ QuadratureDecoder](https://github.com/adamgreen/QuadratureDecoder), Copyright 2021 Adam Green (https://github.com/adamgreen/). QuadratureDecoder is distributed under the terms of the Apache License Version 2.0. | [Qdec](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/tree/cf4ea2f01e0efe79339fd23c5473e978ff1312fd/src/qdec) |
