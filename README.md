@@ -42,7 +42,7 @@ I was looking to add the DRO feature to my small milling machine. I wanted to us
 ### Running
 
 1. Make sure you watch the video at the top of the page.
-2. Build this test circuit for Raspberry Pi Pico
+2. Build the circuit below.
 
 <img src="/docs/PicoDroCircuitDiagram.jpg" max-height="300" alt="DIY digital readout with Linear scales using Raspberry Pi Pico">
 
