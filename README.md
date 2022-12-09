@@ -39,7 +39,7 @@ I was looking to add the DRO feature to my small milling machine. I wanted to us
 1. Compile using build.sh 
     ```shell
     chmod +x build.sh
-    ./build.sh`
+    ./build.sh
     ```
     - Or run
     ```shell
