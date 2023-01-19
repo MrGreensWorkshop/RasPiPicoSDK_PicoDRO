@@ -29,8 +29,8 @@ int main(void)
     // As long as there are two pins in a row, any two pins can be assigned for each axis.
                         //  X:A X:B Y:A Y:B Z:A Z:B
     const char pinList[] = {16, 17, 18, 19, 20, 21};
-    const char PinCnt = sizeof(pinList);
-    const char axisCnt = PinCnt / 2;
+    const char pinCnt = sizeof(pinList);
+    const char axisCnt = pinCnt / 2;
     const char axisNames[] = {'X', 'Y', 'Z'};
     // readInterval < sendIntervalMin < sendIntervalMax
     // I didn't test the minimum response time of the system.
@@ -52,7 +52,7 @@ int main(void)
     qdec.init(pio0);
 
     int x = 0;
-    for(int i = 0; i < PinCnt; i++) {
+    for(int i = 0; i < pinCnt; i++) {
         gpio_init(pinList[i]);
         gpio_disable_pulls(pinList[i]);
         if (i % 2 == 0) {
