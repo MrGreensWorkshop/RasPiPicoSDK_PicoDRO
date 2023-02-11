@@ -31,9 +31,9 @@ I was looking to add the DRO feature to my small milling machine. I wanted to us
 
 ### Compilation
 
-1. Make sure you are using the [Pico SDK's develop branch](https://github.com/raspberrypi/pico-sdk/tree/develop).
-    - **Disabling DTR check for USB CDC**, As we are going to use TouchDro App, we need to disable the DTR check for the USB CDC connection. Related [PR](https://github.com/raspberrypi/pico-sdk/pull/932) is already merged into develop branch.
-    - **Setting as self-powered USB device**, Since the circuit is designed as a self-powered USB device, to tell the USB host that we are not draining power from it, we need to set the attribute called bmAttributes in the USB configuration descriptor. Related [PR](https://github.com/raspberrypi/pico-sdk/pull/1105) is already merged into develop branch.
+1. Please make sure you are using the [Pico SDK v1.5.0](https://github.com/raspberrypi/pico-sdk/releases/tag/1.5.0) or later, because the implementations described below are necessary.
+    - **Disabling DTR check for USB CDC**, As we are going to use TouchDro App, we need to disable the DTR check for the USB CDC connection.
+    - **Setting as self-powered USB device**, Since the circuit is designed as a self-powered USB device, to tell the USB host that we are not draining power from it, we need to set the attribute called bmAttributes in the USB configuration descriptor.
 1. Open the project in VS Code because it adds SDK to the environment string. (Check the [.vscode/settings.json](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/blob/main/.vscode/settings.json) file for details.)
     - Or add PICO_SDK_PATH to your environment string. 
 1. Compile using build.sh 
