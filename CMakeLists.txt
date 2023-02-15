@@ -34,8 +34,10 @@ STRING(REPLACE ";" "\n" PIO_SRC_STR "${pio_src}")
 # Print the pio source file list
 message(STATUS "PIO code source files: \n${PIO_SRC_STR}")
 
-# Add all pio source files to the build
-pico_generate_pio_header(${PROJECT_NAME} ${pio_src})
+# If there are any PIO source files, include them to the build.
+if (NOT pio_src STREQUAL "")
+  pico_generate_pio_header(${PROJECT_NAME} ${pio_src})
+endif()
 
 # Get all C and C++ files, when the glob value changes, cmake will run again and update the files
 file(GLOB_RECURSE app_src CONFIGURE_DEPENDS "${SOURCE_FOLDER}/*.c" "${SOURCE_FOLDER}/*.cpp" )
@@ -50,16 +52,25 @@ message(STATUS "C and C++ source files: \n${APP_SRC_STR}")
 target_sources(${PROJECT_NAME} PRIVATE ${app_src})
 
 # Link the Project to extra libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE pico_stdlib hardware_pio hardware_dma)
+target_link_libraries(${PROJECT_NAME} PRIVATE
+  pico_stdlib
+  hardware_pio
+  hardware_dma
+)
+
+# Including header files directly from project directory
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}
+)
 
 # Export binaries like hex, bin, and uf2 files.
 pico_add_extra_outputs(${PROJECT_NAME})
 
-# Enable USB CDC
-pico_enable_stdio_usb(${PROJECT_NAME} 1)
-
-# Disable UART
+# Enable or Disable UART
 pico_enable_stdio_uart(${PROJECT_NAME} 0)
+
+# Enable or Disable USB CDC
+pico_enable_stdio_usb(${PROJECT_NAME} 1)
 
 # Disable DTR check for USB CDC connection
 add_definitions(-DPICO_STDIO_USB_CONNECTION_WITHOUT_DTR=1)

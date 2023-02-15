@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022 Mr. Green's Workshop https://www.MrGreensWorkshop.com
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
 {
     "version": "0.2.0",
     "configurations": [{ 
@@ -5,7 +10,7 @@
       "device": "RP2040",
       "gdbPath": "arm-none-eabi-gdb",
       "cwd": "${workspaceRoot}",
-      "executable": "build/QuadratureDecoder.elf",
+      "executable": "build/PicoDRO.elf",
       "request": "launch",
       "type": "cortex-debug",
       "servertype": "openocd",

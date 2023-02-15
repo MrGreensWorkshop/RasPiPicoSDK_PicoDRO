@@ -31,6 +31,11 @@ I was looking to add the DRO feature to my small milling machine. I wanted to us
 
 ### Compilation
 
+1. Clone the repo as shown below, or [download latest release](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/releases/latest).
+
+    ```shell
+    git clone https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO.git
+    ```
 1. Please make sure you are using the [Pico SDK v1.5.0](https://github.com/raspberrypi/pico-sdk/releases/tag/1.5.0) or later, because the implementations described below are necessary.
     - **Disabling DTR check for USB CDC**, As we are going to use TouchDro App, we need to disable the DTR check for the USB CDC connection.
     - **Setting as self-powered USB device**, Since the circuit is designed as a self-powered USB device, to tell the USB host that we are not draining power from it, we need to set the attribute called bmAttributes in the USB configuration descriptor.
@@ -55,11 +60,13 @@ I was looking to add the DRO feature to my small milling machine. I wanted to us
 
 3. Get the binary
     - You can compile the project and get the binary as explained above.
-    - Or you can use precompiled binary files from the [latest release](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/releases/latest), download the "binary.zip" under the Assets, and unzip.
+    - Or you can use precompiled binary files from the [latest release](https://github.com/MrGreensWorkshop/RasPiPicoSDK_PicoDRO/releases/latest), download the "binary.zip" and unzip.
 1. Put the Raspberry Pi Pico into bootloader mode by pushing the bootsel button while plugging it into your computer.
-1. Copy the ".uf2" file to your Raspberry Pi Pico's storage.
-    - Drag and drop the binary file
-    - Or if you are using MacOS try this `cp -X build/PicoDRO.uf2 /Volumes/RPI-RP2`
+1. Copy the `build/PicoDRO.uf2` file to the Raspberry Pi Pico either by dragging and dropping or using the `cp` command as shown below.
+
+    | Linux | macOS |
+    | :---- | ----- |
+    | `cp build/PicoDRO.uf2 /media/<user>/RPI-RP2` | `cp build/PicoDRO.uf2 /Volumes/RPI-RP2` |
 1. TouchDRO App V3 or higher version is required to use via USB, but it has not been released yet. But you can get the app by entering the Android test program. For details, please check the [official TouchDRO website](https://www.touchdro.com/resources/info/touchdro-v3.html#accessToBetaTesting). (Android 5.0 or higher is required.)
 1. Download and Open the App.
 1. To set USB as the default interface, please set `Settings > Use USB Connection` and set `USB Baud Rate` to `115200`.
